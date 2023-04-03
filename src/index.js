@@ -1,7 +1,9 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import * as dotenv from 'dotenv'
 import adnRoute from './routes/adn.js';
 import db from './model/index.js';
+dotenv.config();
 
 const app = express();
 
@@ -16,6 +18,6 @@ app.use('/', adnRoute);
 
 app.get('/home',(req,res)=> res.send('Esto es una prueba para Guros'))
 
-app.listen(3000)
+app.listen(process.env.PORT)
 
 console.log('Server is running');

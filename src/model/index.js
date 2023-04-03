@@ -1,30 +1,20 @@
 import Sequelize from 'sequelize';
 import CadenaModel from './cadena.model.js';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 const dbConfig = {
   HOST: "localhost",
-  USER: "postgres",
-  PASSWORD: "admin",
-  DB: "adn",
+  USER: process.env.DB_USERNAME,
+  PASSWORD: process.env.DB_PASSWORD,
+  DB: process.env.DB_NAME,
   dialect: "postgres",
-  pool: {
-    max: 5,
-    min: 0,
-    acquire: 30000,
-    idle: 10000
-  }
 };
 
 const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   host: dbConfig.HOST,
-  dialect: dbConfig.dialect,
-
-  pool: {
-    max: dbConfig.pool.max,
-    min: dbConfig.pool.min,
-    acquire: dbConfig.pool.acquire,
-    idle: dbConfig.pool.idle
-  }
+  dialect: dbConfig.dialect
 });
 
 const db = {};
