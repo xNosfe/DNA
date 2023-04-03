@@ -1,16 +1,9 @@
-import { Router } from 'express';
-import mutationFunc from '../mutation/mutation.js';
+import { Router } from "express";
+import ADNController from "../controllers/adn.controller.js";
 const router = Router();
 
-router.get('/',(req,res)=>{
-  console.log(req);
-  res.sendStatus(200);
-})
+router.get("/stats", ADNController.GetCadenas);
 
-router.post('/', (req, res) => {
-  const {dna} = req.body;
-  
-  return res.sendStatus(mutationFunc(JSON.parse(dna)));
-});
+router.post("/mutation", ADNController.CreateCadena);
 
 export default router;
