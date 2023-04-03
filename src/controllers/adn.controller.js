@@ -43,7 +43,7 @@ const GetCadenas = (req, res) => {
         if (mutationFunc(dna.adn)) {
           result.count_mutations++;
         } else {
-          result.count_no_mutation++;
+          result.count_no_mutations++;
         }
       });
 
