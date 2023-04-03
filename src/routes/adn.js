@@ -10,7 +10,7 @@ router.get('/',(req,res)=>{
 router.post('/', (req, res) => {
   const {dna} = req.body;
   
-  return res.send(mutationFunc(JSON.parse(dna)));
+  return res.sendStatus(mutationFunc(JSON.parse(dna)));
 });
 
 export default router;

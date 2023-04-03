@@ -31,9 +31,9 @@ const mutationFunc = (ADN) => {
   })
   
   if(hasMutationHorizontal === 4 || hasMutationVertical === 4 ||hasMutationDiagonal ===4){
-    return true;
+    return 200;
    } else {
-     return false;
+     return 403;
    }
 
 }
