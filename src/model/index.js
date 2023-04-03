@@ -1,11 +1,11 @@
-import Sequelize from 'sequelize';
-import CadenaModel from './cadena.model.js';
-import * as dotenv from 'dotenv';
+import Sequelize from "sequelize";
+import CadenaModel from "./cadena.model.js";
+import * as dotenv from "dotenv";
 
 dotenv.config();
 
 const dbConfig = {
-  HOST: "localhost",
+  HOST: process.env.DB_HOST,
   USER: process.env.DB_USERNAME,
   PASSWORD: process.env.DB_PASSWORD,
   DB: process.env.DB_NAME,
@@ -14,7 +14,7 @@ const dbConfig = {
 
 const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   host: dbConfig.HOST,
-  dialect: dbConfig.dialect
+  dialect: dbConfig.dialect,
 });
 
 const db = {};
