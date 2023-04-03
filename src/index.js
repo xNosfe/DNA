@@ -1,9 +1,11 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import adnRoute from './routes/adn.js';
-import model from './model/index.js';
+import db from './model/index.js';
 
 const app = express();
+
+db.sequelize.sync();
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
