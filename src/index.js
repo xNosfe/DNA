@@ -12,9 +12,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.raw());
 
 app.use(express.json());
-app.use('/adn', adnRoute);
+app.use('/', adnRoute);
 
-app.get('/',(req,res)=> res.send('Esto es una prueba para Guros'))
+app.get('/home',(req,res)=> res.send('Esto es una prueba para Guros'))
 
 app.listen(3000)
 

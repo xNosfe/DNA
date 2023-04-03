@@ -23,7 +23,7 @@ Start the server
 #### Post all items
 
 ```http
-  Post /adn
+  Post /mutation
 ```
 
 | Parameter | Type     | Description                |
@@ -33,5 +33,5 @@ Start the server
 #### Get main page
 
 ```http
-  GET /
+  GET /stats
 ```
